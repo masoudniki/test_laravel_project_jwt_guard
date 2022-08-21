@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    dump('oh yeah now you are logged in ' . 'dear '.\Illuminate\Support\Facades\Auth::user()->name);
+    dump('your details are:');
+    dump(\Illuminate\Support\Facades\Auth::user()->toArray());
+
 })->middleware('auth:jwt');
